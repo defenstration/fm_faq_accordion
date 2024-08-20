@@ -27,14 +27,14 @@ body, h1, h2, h3, h4, p, ul, ol {
 /* Set body                               */
 
 body {
-    font-family: 'Outfit', 'sans-serif';
+    font-family: 'Work Sans', 'sans-serif';
     width: 100vw;
     min-width: 375px;
-    background-color:  hsl(var(--clr-stone100));
+    background-color:  hsl(var(--clr-Light-pink));
     line-height: 150%;
     letter-spacing: 0px;
     font-size: 16px;
-    color: hsl(var(--clr-stone900))
+    color: hsl(var(--clr-Dark-purple))
 }
 
 /* Image Settings                        */
@@ -77,42 +77,105 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 /* Frontend Mentor attribution    */
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
-/* Font Classes                   */
-
-/* Color Classes                  */
-
 /*--------------------------------*/
 /* Styling                        */
 /*--------------------------------*/
-
-* {
-    border: 1px solid black
+.banner {
+    background-image: url("/faq-accordion-main/assets/images/background-pattern-desktop.svg");
+    background-position: center;
+    height: 200px;
+    width: 100%;
 }
 
-.banner {
-
+main {
+    width: 550px;
+    min-height: 500px;
+    margin: auto;
+    background-color: hsl(var(--clr-White));
+    border-radius: 15px;
+    transform: translate(0, -100px);
+    padding: 15px
 }
 
 .page-label {
     flex-direction: row;
+    height: 100px;
+    justify-content: left;
+}
 
+.star {
+    padding-inline: 25px;
+}
+
+h1 {
+    margin-block: auto;
+    font-weight: 700;
+    font-size: 56px;
+}
+
+.faq-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+h2 {
+    width: 90%;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+h2:hover {
+    color: hsl(var(--clr-Grayish-purple))
 }
 
 .question {
+    flex-direction: row;
+    justify-content: left;
+    padding-block: 15px;
 
 }
 
-.answer {
+/* Check Button Functionality  */
+.check-btn {
+    display: none;
+}
 
+.check-label {
+    width: 30px;
+    height: 30px;
+    background-image: url("faq-accordion-main/assets/images/icon-plus.svg");
+    background-position: center;
+    background-size: cover;
+}
+
+.answer {
+    display: none;
+    margin-inline: auto;
+    margin-block: 10px;
+    font-weight: 400;
+    color: hsl(var(--clr-Grayish-purple))
+}
+
+.check-btn:checked ~ .question .check-label {
+    background-image: url("faq-accordion-main/assets/images/icon-minus.svg")
+} 
+
+.check-btn:checked ~ .answer {
+    display: block;
 }
 
 /*--------------------------------*/
 /* Styling for small screens      */
 /*--------------------------------*/
+
+@media (width < 550px) {
+    main {
+        width: 350px;
+    }
+}
